@@ -59,6 +59,7 @@ const Preview: React.FC<PreviewProps> = ({ code, err }) => {
         sandbox='allow-scripts'
         srcDoc={html}
       />
+      {err && <div className='preview-error'>{err}</div>}
     </div>
   );
 };
