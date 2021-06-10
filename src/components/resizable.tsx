@@ -8,14 +8,13 @@ interface ResizableProps {
 
 const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
   let resizableProps: ResizableBoxProps;
-  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const [innerHeight, setInnerHeight] = useState(window.innerHeight);
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const [width, setWidth] = useState(window.innerWidth * 0.75);
 
   useEffect(() => {
     let timer: any;
     const listener = () => {
-      //debouncing debouncing
       if (timer) {
         clearTimeout(timer);
       }
@@ -27,7 +26,6 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
         }
       }, 100);
     };
-
     window.addEventListener('resize', listener);
 
     return () => {
@@ -43,7 +41,7 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
       height: Infinity,
       width,
       resizeHandles: ['e'],
-      onResizeStop: (e, data) => {
+      onResizeStop: (event, data) => {
         setWidth(data.size.width);
       },
     };
