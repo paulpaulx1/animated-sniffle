@@ -28,6 +28,7 @@
     "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-modal": "^3.14.2",
     "react-redux": "7.2.2",
     "react-resizable": "1.11.0",
     "react-scripts": "4.0.1",
@@ -64,5 +65,8 @@
   "description": "IN BROWSER BUNDLER/TRANSPILER/MARKDOWN APP. Uses ESBuild WASM for lightning fast speed. It's safe. Write some code, write some notes, save that information and use it later. Works with React and other NPM packages.",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react-modal": "^3.12.0"
+  }
 }
