@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import { useTypedSelector } from '../hooks/use-typed-selector';
 import CellListItem from './cell-list-item';
 import AddCell from './add-cell';
+import InfoModal from './info-model';
 
 const CellList: React.FC = () => {
   const cells = useTypedSelector(({ cells: { order, data } }) =>
@@ -11,13 +12,14 @@ const CellList: React.FC = () => {
 
   const renderedCells = cells.map((cell) => (
     <Fragment key={cell.id}>
+      <InfoModal />
       <CellListItem cell={cell} />
       <AddCell previousCellId={cell.id} />
     </Fragment>
   ));
 
   return (
-    <div className="cell-list">
+    <div className='cell-list'>
       <AddCell forceVisible={cells.length === 0} previousCellId={null} />
       {renderedCells}
     </div>
